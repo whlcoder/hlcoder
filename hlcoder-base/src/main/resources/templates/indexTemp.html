@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="keywords"/>
+    <meta content="" name="author"/>
+    <title> Home · Application theme · Official Bootstrap Themes </title>
+
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600"/>
+    <link rel="stylesheet" th:href="@{/css/toolkit.css}" />
+    <link rel="stylesheet" th:href="@{/css/application.css}" />
+    <script th:src="@{/jquery/jquery-3.1.0.min.js}"></script>
+    <style>
+
+        /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+        /* this chunk of css is not part of the toolkit :) */
+        body {
+            width: 1px;
+            min-width: 100%;
+            *width: 100%;
+        }
+
+    </style>
+</head>
+<body class="ang">
+<div id="app-growl" class="anq"></div>
+<nav class="ck pc os app-navbar">
+    <div class="by">
+        <div class="or">
+            <button class="ou collapsed" data-target="#navbar-collapse-main" data-toggle="collapse" type="button">
+                <span class="cv">Toggle navigation</span>
+                <span class="ov"></span>
+                <span class="ov"></span>
+                <span class="ov"></span>
+            </button>
+            <a class="e" href="index.html">
+                <img alt="brand" src="img/brand-white.png"/>
+            </a>
+        </div>
+        <div id="navbar-collapse-main" class="f collapse">
+            <ul class="nav navbar-nav ss">
+                <li class="active">
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="profile/index.html">Profile</a>
+                </li>
+                <li>
+                    <a href="#msgModal" data-toggle="modal">Messages</a>
+                </li>
+                <li>
+                    <a href="docs/index.html">Docs</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav og ale ss">
+                <li>
+                    <a class="g" href="notifications/index.html">
+                        <span class="h ws"></span>
+                    </a>
+                </li>
+                <li>
+                    <button class="cg fm ox anl" data-toggle="popover" data-original-title="" title="">
+                        <img class="cu" src="assets/img/avatar-dhg.png"/>
+                    </button>
+                </li>
+            </ul>
+            <form class="ow og i" role="search">
+                <div class="et">
+                    <input class="form-control" type="text" placeholder="Search" data-action="grow"/>
+                </div>
+            </form>
+            <ul class="nav navbar-nav st su sv">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="profile/index.html">Profile</a>
+                </li>
+                <li>
+                    <a href="notifications/index.html">Notifications</a>
+                </li>
+                <li>
+                    <a href="#msgModal" data-toggle="modal">Messages</a>
+                </li>
+                <li>
+                    <a href="docs/index.html">Docs</a>
+                </li>
+                <li>
+                    <a data-action="growl" href="#">Growl</a>
+                </li>
+                <li>
+                    <a href="login/index.html">Logout</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav hidden">
+                <li>
+                    <a data-action="growl" href="#">Growl</a>
+                </li>
+                <li>
+                    <a href="login/index.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="by amt">
+    <span id="transmark" style="display: none; width: 0px; height: 0px;"></span>
+    <div class="gc">
+        <div class="gn">
+            <div class="qv rc aog alu">
+                <div class="qx" style="background-image: url(assets/img/iceland.jpg);"></div>
+                <div class="qw dj">
+                    <a href="profile/index.html">
+                        <img class="aoh" src="assets/img/avatar-dhg.png"/>
+                    </a>
+                    <h5 class="qy">
+                        <a class="aku" href="profile/index.html">Dave Gamache</a>
+                    </h5>
+                    <p class="alu">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+                    <ul class="aoi">
+                        <li class="aoj">
+                            <a class="aku" data-toggle="modal" href="#userModal">
+                                Friends
+                                <h5 class="ali">12M</h5>
+                            </a>
+                        </li>
+                        <li class="aoj">
+                            <a class="aku" data-toggle="modal" href="#userModal">
+                                Enemies
+                                <h5 class="ali">1</h5>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qv rc sm sp">
+                <div class="qw">
+                    <h5 class="ald">
+                        About
+                        <small>
+                            ·
+                            <a href="#">Edit</a>
+                        </small>
+                    </h5>
+                    <ul class="eb tb">
+                        <li>
+                            <span class="dp h xh all"></span>
+                            Went to
+                            <a href="#">Oh, Canada</a>
+                        </li>
+                        <li>
+                            <span class="dp h ajw all"></span>
+                            Became friends with
+                            <a href="#">Obama</a>
+                        </li>
+                        <li>
+                            <span class="dp h abu all"></span>
+                            Worked at
+                            <a href="#">Github</a>
+                        </li>
+                        <li>
+                            <span class="dp h ack all"></span>
+                            Lives in
+                            <a href="#">San Francisco, CA</a>
+                        </li>
+                        <li>
+                            <span class="dp h adt all"></span>
+                            From
+                            <a href="#">Seattle, WA</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qv rc sm sp">
+                <div class="qw">
+                    <h5 class="ald">
+                        Photos
+                        <small>
+                            ·
+                            <a href="#">Edit</a>
+                        </small>
+                    </h5>
+                    <div data-target-height="150" data-grid="images">
+                        <div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
+                            <img src="assets/img/instagram_5.jpg" data-action="zoom" data-height="640" data-width="640" style="width: 117px; height: 118px;"/>
+                        </div>
+                        <div style="margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;">
+                            <img src="assets/img/instagram_6.jpg" data-action="zoom" data-height="640" data-width="640" style="width: 117px; height: 118px;"/>
+                        </div>
+                        <div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
+                            <img src="assets/img/instagram_7.jpg" data-action="zoom" data-height="640" data-width="640" style="width: 117px; height: 118px;"/>
+                        </div>
+                        <div style="margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;">
+                            <img src="assets/img/instagram_8.jpg" data-action="zoom" data-height="640" data-width="640" style="width: 117px; height: 118px;"/>
+                        </div>
+                        <div style="margin-bottom: 10px; margin-right: 10px; display: inline-block; vertical-align: bottom;">
+                            <img src="assets/img/instagram_9.jpg" data-action="zoom" data-height="640" data-width="640" style="width: 117px; height: 118px;"/>
+                        </div>
+                        <div style="margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;">
+                            <img src="assets/img/instagram_10.jpg" data-action="zoom" data-height="640" data-width="640" style="width: 117px; height: 118px;"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gz">
+            <ul class="ca qo anx">
+                <li class="qf b aml">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Message"/>
+                        <div class="fj">
+                            <button class="cg fm" type="button">
+                                <span class="h xi"></span>
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li class="qf b aml">
+                    <a class="qj" href="#">
+                        <img class="qh cu" src="assets/img/avatar-dhg.png"/>
+                    </a>
+                    <div class="qg">
+                        <div class="qn">
+                            <small class="eg dp">4 min</small>
+                            <h5>Dave Gamache</h5>
+                        </div>
+                        <p> Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                        <div class="any" data-grid="images">
+                            <div style="display: inline-block; margin-bottom: 10px; margin-right: 10px; vertical-align: bottom;">
+                                <img src="assets/img/unsplash_1.jpg" data-height="700" data-width="1050" data-action="zoom" style="width: 273px; height: 183px;"/>
+                            </div>
+                            <div style="display: inline-block; margin-bottom: 10px; margin-right: 0px; vertical-align: bottom;">
+                                <img src="assets/img/instagram_1.jpg" data-height="640" data-width="640" data-action="zoom" style="width: 183px; height: 183px;"/>
+                            </div>
+                            <div style="display: inline-block; margin-bottom: 10px; margin-right: 10px; vertical-align: bottom;">
+                                <img src="assets/img/instagram_13.jpg" data-height="640" data-width="640" data-action="zoom" style="width: 182px; height: 183px;"/>
+                            </div>
+                            <div style="display: inline-block; margin-bottom: 10px; margin-right: 0px; vertical-align: bottom;">
+                                <img src="assets/img/unsplash_2.jpg" data-height="700" data-width="1048" data-action="zoom" style="width: 274px; height: 183px;"/>
+                            </div>
+                        </div>
+                        <ul class="qo alm">
+                            <li class="qf">
+                                <a class="qj" href="#">
+                                    <img class="qh cu" src="assets/img/avatar-fat.jpg"/>
+                                </a>
+                                <div class="qg">
+                                    <strong>Jacon Thornton: </strong>
+                                    Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                                </div>
+                            </li>
+                            <li class="qf">
+                                <a class="qj" href="#">
+                                    <img class="qh cu" src="assets/img/avatar-mdo.png"/>
+                                </a>
+                                <div class="qg">
+                                    <strong>Mark Otto: </strong>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="qf b aml">
+                    <a class="qj" href="#">
+                        <img class="qh cu" src="assets/img/avatar-fat.jpg"/>
+                    </a>
+                    <div class="qg">
+                        <div class="aoc">
+                            <div class="qn">
+                                <small class="eg dp">12 min</small>
+                                <h5>Jacob Thornton</h5>
+                            </div>
+                            <p> Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="qf b aml">
+                    <a class="qj" href="#">
+                        <img class="qh cu" src="assets/img/avatar-mdo.png"/>
+                    </a>
+                    <div class="qg">
+                        <div class="qn">
+                            <small class="eg dp">34 min</small>
+                            <h5>Mark Otto</h5>
+                        </div>
+                        <p> Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                        <div class="any" data-grid="images">
+                            <img src="assets/img/instagram_3.jpg" data-action="zoom" data-height="640" data-width="640" style="display: inline-block; width: 467px; height: 452px; margin-bottom: 10px; margin-right: 0px; vertical-align: bottom;"/>
+                        </div>
+                        <ul class="qo">
+                            <li class="qf">
+                                <a class="qj" href="#">
+                                    <img class="qh cu" src="assets/img/avatar-dhg.png"/>
+                                </a>
+                                <div class="qg">
+                                    <strong>Dave Gamache: </strong>
+                                    Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at lobortis.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="gn">
+            <div class="alert pv alert-dismissible ss" role="alert">
+                <button class="close" aria-label="Close" data-dismiss="alert" type="button">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <a class="pr" href="profile/index.html">Visit your profile!</a>
+                Check your self, you aren't looking too good.
+            </div>
+            <div class="qv rc alu ss">
+                <div class="qw">
+                    <h5 class="ald">Sponsored</h5>
+                    <div data-target-height="150" data-grid="images">
+                        <img class="qh" src="assets/img/instagram_2.jpg" data-action="zoom" data-height="640" data-width="640" style="width: 245px; height: 230px; margin-bottom: 10px; margin-right: 0px; display: inline-block; vertical-align: bottom;"/>
+                    </div>
+                    <p>
+                        <strong>It might be time to visit Iceland.</strong>
+                        Iceland is so chill, and everything looks cool here. Also, we heard the people are pretty nice. What are you waiting for?
+                    </p>
+                    <button class="cg ts fx">Buy a ticket</button>
+                </div>
+            </div>
+            <div class="qv rc alu ss">
+                <div class="qw">
+                    <h5 class="ald">
+                        Likes
+                        <small>
+                            ·
+                            <a href="#">View All</a>
+                        </small>
+                    </h5>
+                    <ul class="qo anx">
+                        <li class="qf alm">
+                            <a class="qj" href="#">
+                                <img class="qh cu" src="assets/img/avatar-fat.jpg"/>
+                            </a>
+                            <div class="qg">
+                                <strong>Jacob Thornton</strong>
+                                @fat
+                                <div class="aoa">
+                                    <button class="cg ts fx">
+                                        <span class="h vc"></span>
+                                        Follow
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="qf">
+                            <a class="qj" href="#">
+                                <img class="qh cu" src="assets/img/avatar-mdo.png"/>
+                            </a>
+                            <div class="qg">
+                                <strong>Mark Otto</strong>
+                                @mdo
+                                <div class="aoa">
+                                    <button class="cg ts fx">
+                                        <span class="h vc"></span>
+                                        Follow
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="qz"> Dave really likes these nerds, no one knows why though. </div>
+            </div>
+            <div class="qv rc aok">
+                <div class="qw">
+                    © 2015 Bootstrap
+                    <a href="#">About</a>
+                    <a href="#">Help</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Ads </a>
+                    <a href="#">info</a>
+                    <a href="#">Brand</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Status</a>
+                    <a href="#">Apps</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Advertise</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

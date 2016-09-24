@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/template :: header">
+</head>
+<body class="ang">
+<div id="app-growl" class="anq"></div>
+<nav class="ck pc os app-navbar" th:include="base/template :: navbar">
+</nav>
+<div class="by amt">
+    <span id="transmark" style="display: none; width: 0px; height: 0px;"></span>
+    <div class="gc">
+        <div class="gn">
+            <div class="qv rc aog alu" th:include="base/template :: author">
+            </div>
+            <div class="qv rc sm sp" th:include="base/template :: blogType">
+            </div>
+            <!--<div class="qv rc sm sp" th:include="base/template :: blogDate">-->
+            <!--</div>-->
+            <div class="qv rc sm sp" th:include="base/template :: link">
+            </div>
+        </div>
+        <div id="content">
+        <div class="hl" th:include="base/template :: blogPage">
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function blogType(id){
+        $.ajax({
+            url:'blogType',
+            type:'post',
+            data:{typeId:id},
+            dataType:'html',
+            success:function(res){
+                $('#content').html(res);
+            }
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/template :: header">
+</head>
+<body class="ang">
+<div id="app-growl" class="anq"></div>
+<nav class="ck pc os app-navbar" th:include="base/template :: navbar">
+</nav>
+<div class="by amt">
+    <span id="transmark" style="display: none; width: 0px; height: 0px;"></span>
+    <div class="gc">
+        <div class="hx">
+            <ul class="ca qo anx">
+                <li class="qf b aml">
+                    <!--<a class="qj" >-->
+                    <!--<img class="qh cu" src="img/avatar-dhg.png"/>-->
+                    <!--</a>-->
+                    <div class="qg">
+                        <div class="qn">
+                            <small class="eg dp" th:text="${#dates.format(blog.releaseDate,'yyyy-MM-dd hh:mm:ss')}">4 min</small>
+                            <h5 th:text="${blog.title}"></h5>
+                        </div>
+                        <div th:utext="${blog.content}">
+                            <p ></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header">
+    <meta charset="UTF-8" />
+    <!--<title th:text="#{head.title}"></title>-->
+    <link rel="shortcut icon" th:href="@{/static/favicon.ico}" type="image/gif" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="" name="description"/>
+    <meta content="" name="keywords"/>
+    <meta content="" name="author"/>
+    <title>路依然遥远 </title>
+
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600"/>
+    <!--<link type="text/css" rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:400,300,600"/>-->
+    <link rel="stylesheet" th:href="@{/css/toolkit.css}" />
+    <link rel="stylesheet" th:href="@{/css/application.css}" />
+    <!--<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />-->
+    <!--<link rel="stylesheet" th:href="@{/bootstrap/css/offcanvas.css}" />-->
+    <script th:src="@{/jquery/jquery.min.js}"></script>
+    <!--<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>-->
+</head>
+<body class="ang">
+<div id="app-growl" class="anq"></div>
+<nav class="ck pc os app-navbar" th:fragment="navbar">
+    <div class="by">
+        <div class="or">
+            <button class="ou collapsed" data-target="#navbar-collapse-main" data-toggle="collapse" type="button">
+                <span class="cv">Toggle navigation</span>
+                <span class="ov"></span>
+                <span class="ov"></span>
+                <span class="ov"></span>
+            </button>
+        </div>
+        <div id="navbar-collapse-main" class="f collapse">
+            <ul class="nav navbar-nav ss">
+                <li class="active">
+                    <a th:href="@{/index}">BLOG</a>
+                </li>
+                <li>
+                    <a th:href="@{/about}">ABOUT</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav og ale ss">
+                <!--<li>-->
+                <!--<a class="g" href="notifications/index.html">-->
+                <!--<span class="h ws"></span>-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<button class="cg fm ox anl" data-toggle="popover" data-original-title="" title="">-->
+                <!--<img class="cu" src="assets/img/avatar-dhg.png"/>-->
+                <!--</button>-->
+                <!--</li>-->
+            </ul>
+            <!--<form class="ow og i" role="search">-->
+            <!--<div class="et">-->
+            <!--<input class="form-control" type="text" placeholder="Search" data-action="grow"/>-->
+            <!--</div>-->
+            <!--</form>-->
+            <ul class="nav navbar-nav st su sv">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="profile/index.html">Profile</a>
+                </li>
+                <li>
+                    <a href="notifications/index.html">Notifications</a>
+                </li>
+                <li>
+                    <a href="#msgModal" data-toggle="modal">Messages</a>
+                </li>
+                <li>
+                    <a href="docs/index.html">Docs</a>
+                </li>
+                <li>
+                    <a data-action="growl" href="#">Growl</a>
+                </li>
+                <li>
+                    <a href="login/index.html">Logout</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav hidden">
+                <li>
+                    <a data-action="growl" href="#">Growl</a>
+                </li>
+                <li>
+                    <a href="login/index.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="by amt">
+    <span id="transmark" style="display: none; width: 0px; height: 0px;"></span>
+    <div class="gc">
+        <div class="gn">
+            <div class="qv rc aog alu" th:fragment="author">
+                <div class="qx" style="background-image: url(/img/iceland.jpg);"></div>
+                <div class="qw dj">
+                    <a th:href="@{/about}">
+                        <img class="aoh" th:src="@{/img/avatar-dhg.png}"/>
+                    </a>
+                    <h5 class="qy">
+                        <a class="aku" th:href="@{/about}" th:text="${blogger.nickName}">路依然遥远</a>
+                    </h5>
+                    <p class="alu" th:text="${blogger.sign}">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+                    <ul class="eb tb">
+                        <li>
+                            <span class="all">email:</span>
+                            <a href="mailto:i@hlcoder.com">i@hlcoder.com</a>
+                        </li>
+                        <li>
+                            <span class="all">weibo:</span>
+                            <a href="http://weibo.com/hlcoder" target="_blank">路依然遥远</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qv rc sm sp" th:fragment="blogType">
+                <div class="qw">
+                    <h5 class="ald">
+                        文章类别
+                    </h5>
+                    <ul class="eb tb" th:each="blogType:${blogTypeList}">
+                        <li>
+                            <span class="dp h all"></span>
+                            <a href="javascript:void(0);" th:text="${blogType.typeName}+'('+${blogType.blogCount}+')'"
+                               th:onclick="'blogType('+${blogType.id}+');'">Oh, Canada</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qv rc sm sp" th:fragment="blogDate">
+                <div class="qw">
+                    <h5 class="ald">
+                        文章日期
+                    </h5>
+                    <ul class="eb tb">
+                        <li>
+                            <span class="dp h xh all"></span>
+                            Went to
+                            <a href="#">Oh, Canada</a>
+                        </li>
+                        <li>
+                            <span class="dp h ajw all"></span>
+                            Became friends with
+                            <a href="#">Obama</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qv rc sm sp" th:fragment="link">
+                <div class="qw">
+                    <h5 class="ald">
+                        友情连接
+                    </h5>
+                    <ul class="eb tb">
+                        <li>
+                            <span class="dp h xh all adp"></span>
+                            <a href="http://luyanfeng.com" target="_blank">路边博客</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hl" th:fragment="blogPage">
+            <ul class="ca qo anx">
+                <li class="qf b aml" th:each="blog:${blogList}">
+                    <!--<a class="qj" >-->
+                        <!--<img class="qh cu" src="img/avatar-dhg.png"/>-->
+                    <!--</a>-->
+                    <div class="qg">
+                        <div class="qn">
+                            <small class="eg dp" th:text="${#dates.format(blog.releaseDate,'yyyy-MM-dd hh:mm:ss')}">4 min</small>
+                            <a th:href="@{'/article/'+${blog.id}}"><h5 th:text="${blog.title}">Dave Gamache</h5></a>
+                        </div>
+                        <p th:utext="${blog.summary}"> Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer th:fragment="footer">
+    <p>&copy; Company 2016</p>
+</footer>
+</body>
+</html>

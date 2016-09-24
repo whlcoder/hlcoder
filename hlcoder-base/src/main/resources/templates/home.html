@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/template :: header">
+</head>
+<body >
+<div class="ans dj" style="background-image: url(/img/iceland.jpg);">
+    <div class="by">
+        <div class="ant">
+            <a th:href="@{/index}"><img class="cu qh" th:src="@{/img/avatar-dhg.png}"/></a>
+            <span id="transmark" style="display: none; width: 0px; height: 0px;"></span>
+            <a th:href="@{/index}"><h3 class="anv" th:text="${blogger.nickName}">路依然遥远</h3></a>
+            <p class="anu" th:text="${blogger.sign}"> I wish i was a little bit taller, wish i was a baller, wish i had a girl… also. </p>
+        </div>
+    </div>
+</div>
+</body>s
+</html>

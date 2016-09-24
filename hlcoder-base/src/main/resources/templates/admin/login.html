@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/template :: header">
+    <title>Getting Started: Serving Web Content</title>
+</head>
+<body class="ang">
+<div class="gb ut">
+    <div class="uv">
+        <form class="alq dj j" method="post" role="form" th:action="@{/admin/index}">
+            <a class="l amb" href="/index.html">
+                <img alt="brand" src="/img/brand.png"/>
+            </a>
+            <div class="et">
+                <input class="form-control" placeholder="用户名"/>
+            </div>
+            <div class="et alu">
+                <input class="form-control" type="password" placeholder="密码"/>
+            </div>
+            <div class="amb">
+                <button class="cg fp" id="submit">登录</button>
+                <button class="cg fm">注册</button>
+            </div>
+            <footer class="apd">
+                <a class="dp" href="#">忘记密码</a>
+            </footer>
+        </form>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        $('#submit').click(function(){
+            $('form').submit();
+        });
+    })
+</script>
+</html>

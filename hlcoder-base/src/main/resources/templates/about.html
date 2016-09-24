@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head th:include="base/template :: header">
+</head>
+<body class="ang">
+<div id="app-growl" class="anq"></div>
+<nav class="ck pc os app-navbar" th:include="base/template :: navbar">
+</nav>
+<div class="qv rc aog alu">
+    <div class="qx" style="background-image: url(/img/iceland.jpg);"></div>
+    <div class="qw dj">
+        <a th:href="@{/about}">
+            <img class="aoh" th:src="@{/img/avatar-dhg.png}"/>
+        </a>
+        <h5 class="qy">
+            <a class="aku" th:href="@{/about}" th:text="${blogger.nickName}">路依然遥远</a>
+        </h5>
+        <p class="alu" th:text="${blogger.sign}">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+        <ul class="eb tb">
+            <li>
+                <span class="all">email:</span>
+                <a href="mailto:i@hlcoder.com">i@hlcoder.com</a>
+            </li>
+            <li>
+                <span class="all">weibo:</span>
+                <a href="http://weibo.com/hlcoder" target="_blank">路依然遥远</a>
+            </li>
+        </ul>
+        <div class="hl">
+            <p class="alu" th:text="${blogger.proFile}">I wish i was a little bit taller, wish i was a baller, wish i had a girl… also.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
