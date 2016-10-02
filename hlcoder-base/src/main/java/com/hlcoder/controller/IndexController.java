@@ -1,12 +1,10 @@
 package com.hlcoder.controller;
 
-import com.hlcoder.model.Blog;
-import com.hlcoder.model.BlogType;
-import com.hlcoder.model.Blogger;
-import com.hlcoder.model.PageBean;
+import com.hlcoder.model.*;
 import com.hlcoder.service.BlogService;
 import com.hlcoder.service.BlogTypeService;
 import com.hlcoder.service.BloggerService;
+import com.hlcoder.service.CommentService;
 import com.hlcoder.util.PageUtil;
 import com.hlcoder.util.StringUtil;
 import org.jsoup.Jsoup;
@@ -40,6 +38,8 @@ public class IndexController {
     private BlogTypeService blogTypeService;
     @Resource
     private BloggerService bloggerService;
+    @Resource
+    private CommentService commentService;
 
     private String bloggerName = "路依然遥远";
 
@@ -65,6 +65,12 @@ public class IndexController {
         map.put("size", pageBean.getPageSize());
         map.put("typeId", typeId);
         List<Blog> blogList=blogService.list(map);
+        Map<String,Object> blogMap = new HashMap<String,Object>();
+        for (Blog blog: blogList){
+            blogMap.put("blogId",blog.getId());
+            List<Comment> list = commentService.list(blogMap);
+            blog.setCommentList(list);
+        }
         mav.addObject("blogList", blogList);
         Blogger blogger = bloggerService.getByUserName(bloggerName);
         mav.addObject("blogger",blogger);
@@ -82,15 +88,6 @@ public class IndexController {
         List<Blog> blogList=blogService.list(map);
         mav.addObject("blogList", blogList);
         mav.setViewName("content");
-        return mav;
-    }
-
-    @RequestMapping(value = "/article/{id}",method = RequestMethod.GET)
-    public ModelAndView article(@PathVariable("id")int id)throws Exception{
-        ModelAndView mav=new ModelAndView();
-        Blog blog=blogService.findById(id);
-        mav.addObject("blog", blog);
-        mav.setViewName("article");
         return mav;
     }
 

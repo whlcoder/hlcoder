@@ -18,9 +18,9 @@ public class CryptographyUtil {
 		return new Md5Hash(str,salt).toString();
 	}
 	
-	public static void main(String[] args) {
-		String password="123456";
-		
-		System.out.println("Md5加密："+CryptographyUtil.md5(password, "java1234"));
-	}
+//	public static void main(String[] args) {
+//		String password="123456";
+//
+//		System.out.println("Md5加密："+CryptographyUtil.md5(password, "java1234"));
+//	}
 }

@@ -10,9 +10,7 @@
     <meta content="" name="keywords"/>
     <meta content="" name="author"/>
     <title>路依然遥远 </title>
-
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600"/>
-    <!--<link type="text/css" rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:400,300,600"/>-->
     <link rel="stylesheet" th:href="@{/css/toolkit.css}" />
     <link rel="stylesheet" th:href="@{/css/application.css}" />
     <!--<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}" />-->
@@ -53,40 +51,20 @@
                 <!--</button>-->
                 <!--</li>-->
             </ul>
-            <!--<form class="ow og i" role="search">-->
-            <!--<div class="et">-->
-            <!--<input class="form-control" type="text" placeholder="Search" data-action="grow"/>-->
-            <!--</div>-->
-            <!--</form>-->
             <ul class="nav navbar-nav st su sv">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a th:href="@{/index}">BLOG</a>
                 </li>
                 <li>
-                    <a href="profile/index.html">Profile</a>
-                </li>
-                <li>
-                    <a href="notifications/index.html">Notifications</a>
-                </li>
-                <li>
-                    <a href="#msgModal" data-toggle="modal">Messages</a>
-                </li>
-                <li>
-                    <a href="docs/index.html">Docs</a>
-                </li>
-                <li>
-                    <a data-action="growl" href="#">Growl</a>
-                </li>
-                <li>
-                    <a href="login/index.html">Logout</a>
+                    <a th:href="@{/about}">ABOUT</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav hidden">
                 <li>
-                    <a data-action="growl" href="#">Growl</a>
+                    <a th:href="@{/index}">BLOG</a>
                 </li>
                 <li>
-                    <a href="login/index.html">Logout</a>
+                    <a th:href="@{/about}">ABOUT</a>
                 </li>
             </ul>
         </div>
@@ -151,14 +129,14 @@
                     </ul>
                 </div>
             </div>
-            <div class="qv rc sm sp" th:fragment="link">
+            <div class="qv rc aok" th:fragment="link">
                 <div class="qw">
                     <h5 class="ald">
                         友情连接
                     </h5>
                     <ul class="eb tb">
                         <li>
-                            <span class="dp h xh all adp"></span>
+                            <span class="dp h all"></span>
                             <a href="http://luyanfeng.com" target="_blank">路边博客</a>
                         </li>
                     </ul>
@@ -167,17 +145,24 @@
         </div>
         <div class="hl" th:fragment="blogPage">
             <ul class="ca qo anx">
-                <li class="qf b aml" th:each="blog:${blogList}">
-                    <!--<a class="qj" >-->
-                        <!--<img class="qh cu" src="img/avatar-dhg.png"/>-->
-                    <!--</a>-->
-                    <div class="qg">
-                        <div class="qn">
-                            <small class="eg dp" th:text="${#dates.format(blog.releaseDate,'yyyy-MM-dd hh:mm:ss')}">4 min</small>
-                            <a th:href="@{'/article/'+${blog.id}}"><h5 th:text="${blog.title}">Dave Gamache</h5></a>
-                        </div>
-                        <p th:utext="${blog.summary}"> Aenean lacinia bibendum nulla sed consectetur. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
-                    </div>
+                <li class="qf b aml">
+                    <ul class="ca qo anx" th:each="blog:${blogList}">
+                        <li class="">
+                            <div class="qg">
+                                <div class="qn">
+                                    <small class="eg dp" th:text="${#dates.format(blog.releaseDate,'yyyy-MM-dd hh:mm:ss')}">4 min</small>
+                                    <small class="eg dp" th:text="| 留言(${blog.commentList.size()}) | "></small>
+                                    <small class="eg dp" th:text="| 阅读(${blog.clickHit}) | "></small>
+                                    <a th:href="@{'/article/'+${blog.id}}"><h5 th:text="${blog.title}">Dave Gamache</h5></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="qf b aml" >
+                            <div class="qg">
+                                <p th:utext="${blog.summary}"> Aenean lacinia bibendum </p>
+                            </div>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

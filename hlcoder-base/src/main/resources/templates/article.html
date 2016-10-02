@@ -18,10 +18,56 @@
                     <div class="qg">
                         <div class="qn">
                             <small class="eg dp" th:text="${#dates.format(blog.releaseDate,'yyyy-MM-dd hh:mm:ss')}">4 min</small>
+                            <small class="eg dp" th:text="| 留言(${blog.commentList.size()}) | "></small>
+                            <small class="eg dp" th:text="| 阅读(${blog.clickHit}) | "></small>
                             <h5 th:text="${blog.title}"></h5>
                         </div>
+                    </div>
+                </li>
+                <li class="qf b aml">
+                    <div class="qg">
                         <div th:utext="${blog.content}">
-                            <p ></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="qf b aml">
+                    <div class="qg">
+                        <h5 >上一篇:<a th:if="${lastBlog} != null" th:href="@{'/article/'+${lastBlog.id}}" th:text="${lastBlog.title}"></a></h5>
+                        <h5 >下一篇:<a th:if="${nextBlog} != null" th:href="@{'/article/'+${nextBlog.id}}" th:text="${nextBlog.title}"></a></h5>
+                    </div>
+                </li>
+                <li class="qf b aml">
+                    <div class="qg">
+                        <div class="qn">
+                            <ul class="ca qo anx" th:each="comment:${commentList}">
+                                <li class="b">
+                                    <div class="qg">
+                                        <div class="qn">
+                                            <small class="eg dp" th:text="${#dates.format(comment.commentDate,'yyyy-MM-dd hh:mm:ss')}">4 min</small>
+                                            <h5 th:text="${comment.userIp}+' 留言:'"></h5>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="qf b aml">
+                                    <div class="qg">
+                                        <div class="qn" th:text="${comment.content}">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="qf b aml">
+                    <div class="qg tg">
+                        <div class="qn">
+                            <textarea id="content" class="form-control" autocomplete="off" placeholder="给我留言吧"></textarea>
+                        </div>
+                        <div class="qn">
+                            <input id="vCode" type="text" name="validCode" autocomplete="off" placeholder="验证码"/>
+                            <img onclick="javascript:loadimage();"  title="换一张试试" name="randImage" id="randImage" th:src="@{/code}" width="60" height="30" border="1" align="absmiddle"/>
+                            <div id="msg"></div>
+                            <button type="button" class="cg fx fp" onclick="submitData();">提交</button>
                         </div>
                     </div>
                 </li>
@@ -29,5 +75,32 @@
         </div>
     </div>
 </div>
+
+<script th:inline="javascript">
+
+    function submitData(){
+        var content = $('#content').val();
+        var blogId = [[${blog.id}]];
+        var vCode = $('#vCode').val();
+        if(content==null || content==''){
+            $('#msg').text('亲!写两句留言吧');
+        }else{
+            $.post("/comment",{'content':content,'blog.id':blogId,'vCode':vCode},function(result){
+                console.debug(result);
+                if(result.flag){
+                    window.location.reload();
+                }else{
+                    $('#msg').text(result.msg);
+                }
+            },'json')
+        }
+    }
+
+    function loadimage(){
+        document.getElementById("randImage").src="/code?"+Math.random();
+    }
+    /*<![CDATA[*/
+    /*]]>*/
+</script>
 </body>
 </html>
